@@ -33,8 +33,13 @@ labelPosition='before'
     <mat-form-field class="example-full-width">
         <input 
         #hrana="ngModel"
-        ngModel name="hrana" matInput placeholder="Favorite food" value="Krompirača" required (keyup.enter)="logInput(hrana)">
+        #hranaHtml
+        ngModel
+        name="hrana" matInput placeholder="Omiljena hrana"
+        value="Krompirača-ovo ne radi ako koristi  ngModel??!!"
+        required (keyup.enter)="logInput(hrana)" maxlength="25">
         <mat-hint>Kobasica, krompir, kiseli kupus</mat-hint>
+        <mat-hint align="end">{{hranaHtml.value.length}} / 20</mat-hint>
         <span matSuffix>@bunjevci</span>
         <span matPrefix>Vruća:</span>
         <mat-error *ngIf="hrana.invalid && hrana.dirty">
@@ -43,5 +48,14 @@ labelPosition='before'
     </mat-form-field>
     <div *ngIf="hrana.invalid && hrana.dirty">
             Ovako pisati errore samo u template/reactive forms, ne u angular materials.
-        </div>
+    </div>
+<br><br>
+    <mat-form-field>
+            <textarea 
+            placeholder="Textarea"
+            matInput 
+            matAutosizeMinRows="1" 
+            matAutosizeMaxRows="5"
+            matTextareaAutosize></textarea>
+    </mat-form-field>
 </form>
