@@ -1,1 +1,47 @@
-<mat-checkbox>Subcribe to newsletter</mat-checkbox>
+<mat-checkbox
+#showDetails
+[checked]="isChecked"
+(change)="onChange($event)"
+labelPosition='before'
+>Show details</mat-checkbox>
+
+<div *ngIf="isChecked">Some information..</div>
+<br>
+<br>
+<mat-radio-group value="1">
+    <mat-radio-button value="1">Male</mat-radio-button>
+    <mat-radio-button value="2">Female</mat-radio-button>
+</mat-radio-group>
+<p>ok primjer https://material.angular.io/components/radio/examples</p>
+
+<br>
+<br>
+<mat-form-field>
+    <mat-select placeholder="Favorite food" (change)="logSelectedItem($event)" [value]="foods[1].value">
+        <!--mosh je umesto [value] pisao [(ngModel)]-->
+        
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{ food.viewValue }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<br>
+<br>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <input 
+        #hrana="ngModel"
+        ngModel name="hrana" matInput placeholder="Favorite food" value="Krompirača" required (keyup.enter)="logInput(hrana)">
+        <mat-hint>Kobasica, krompir, kiseli kupus</mat-hint>
+        <span matSuffix>@bunjevci</span>
+        <span matPrefix>Vruća:</span>
+        <mat-error *ngIf="hrana.invalid && hrana.dirty">
+            Unesite naziv svog omiljenog jela.(ovako raditi u angular materials.)
+        </mat-error>
+    </mat-form-field>
+    <div *ngIf="hrana.invalid && hrana.dirty">
+            Ovako pisati errore samo u template/reactive forms, ne u angular materials.
+        </div>
+</form>
