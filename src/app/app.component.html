@@ -59,3 +59,23 @@ labelPosition='before'
             matTextareaAutosize></textarea>
     </mat-form-field>
 </form>
+<br><br>
+<p>U ovom trenutku datepicker je bugovit..(npr greska za invalid date ako se upise rucno) 
+    .idi tu https://material.angular.io/components/datepicker/overview
+    .vidi i moment.js u kombinaciji sa ovim</p>
+<mat-form-field>
+    <input
+    (focus)="picker.open()"
+    [min]="minDate"
+    [max]="maxDate"
+    matInput [matDatepicker]="picker" placeholder="Choose a date"><!--vezes prvi na treci red-->
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle><!--ikonica desna-->
+    <mat-datepicker #picker></mat-datepicker><!--ako se ne vidi na mobitelima onda ubaci touchUi="true"-->
+  </mat-form-field>
+  <br><br>
+  <mat-icon class="moja-ikona" >home</mat-icon>
+  <mat-icon class="moja-ikona">add_alert</mat-icon>
+  <br> <br>
+  <button mat-button color="primary">Click me!</button>
+  <button mat-raised-button color="primary">Click me!</button>
+  <button mat-fab color="primary"><mat-icon>check</mat-icon></button>

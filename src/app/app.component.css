@@ -7,3 +7,7 @@
   .example-full-width {
     width: 100%;
   }
+
+  mat-icon.moja-ikona {
+    color: purple;
+  }

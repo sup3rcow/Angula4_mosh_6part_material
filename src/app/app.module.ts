@@ -5,7 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
-import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatDatepickerModule } from '@angular/material';
+import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatDatepickerModule,
+   MatNativeDateModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -20,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     MatRadioModule,
     MatSelectModule,
     MatInputModule,
-    MatDatepickerModule
+    MatDatepickerModule, MatNativeDateModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

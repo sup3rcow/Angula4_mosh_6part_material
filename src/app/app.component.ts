@@ -15,6 +15,10 @@ export class AppComponent {
     {value: 'tacos-2', viewValue: 'Tacos'}
   ];
 
+  // javascrip mjesece racuna od 0 do 11
+  minDate = new Date(2017, 0, 1); // prvi januar
+  maxDate = new Date(2017, 11, 31); // 31 decembar
+
   onChange($event) {
     console.log($event);
     this.isChecked = !this.isChecked;
