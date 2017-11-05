@@ -79,3 +79,23 @@ labelPosition='before'
   <button mat-button color="primary">Click me!</button>
   <button mat-raised-button color="primary">Click me!</button>
   <button mat-fab color="primary"><mat-icon>check</mat-icon></button>
+  <br><br>
+  <mat-chip-list>
+    <mat-chip>One fish</mat-chip>
+    <mat-chip>Two fish</mat-chip>
+    <mat-chip color="primary" selected="true">Primary fish</mat-chip>
+    <mat-chip color="accent" selected="true">Accent fish</mat-chip>
+  </mat-chip-list>
+  <p>Odjednom samo jedan schip moze biti selektiran</p>
+  <mat-chip-list>
+      <mat-chip
+      *ngFor="let category of categories"
+      (click)="categorySelected(category)"
+      [selected]="category.selected"
+      >{{ category.name }}
+    </mat-chip><!--click event si moga i ovako nekao "category.selected = !category.selected"categorySelected(category)-->
+  </mat-chip-list>
+  <br><br>
+  <!-- <mat-spinner></mat-spinner> -->
+  <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+  <mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
