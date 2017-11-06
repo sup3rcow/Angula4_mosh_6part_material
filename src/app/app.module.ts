@@ -7,12 +7,17 @@ import { AppComponent } from './app.component';
 
 import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatDatepickerModule,
    MatNativeDateModule, MatIconModule, MatButtonModule, MatChipsModule, MatProgressSpinnerModule,
-   MatTooltipModule, MatTabsModule } from '@angular/material';
+   MatTooltipModule, MatTabsModule, MatDialogModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { EditCourseComponent } from './edit-course/edit-course.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditCourseComponent
+  ],
+  entryComponents: [ // tu registriras komponente koje se pojavljuju dinamicki, a to su dialog komponente
+    EditCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +33,14 @@ import { FormsModule } from '@angular/forms';
     MatChipsModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+
+    // kad god je parametar klase oznacen kao DIALOG_DATA, dipendency injection mu treba data prazan objekt {}
+    // { provide: DIALOG_DATA, useValue: {}} // zakomentirao si, jer za dialog koristi direktivu MAT_DIALOG_DATA
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
