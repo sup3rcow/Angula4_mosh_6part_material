@@ -5,11 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
-import { MatCheckboxModule, MatRadioModule, MatSelectModule, MatInputModule, MatDatepickerModule,
-   MatNativeDateModule, MatIconModule, MatButtonModule, MatChipsModule, MatProgressSpinnerModule,
-   MatTooltipModule, MatTabsModule, MatDialogModule } from '@angular/material';
+
 import { FormsModule } from '@angular/forms';
 import { EditCourseComponent } from './edit-course/edit-course.component';
+import { MatComponentsModule } from './mat-components.module';
 
 @NgModule({
   declarations: [
@@ -23,18 +22,7 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatInputModule,
-    MatDatepickerModule, MatNativeDateModule,
-    MatIconModule,
-    MatButtonModule,
-    MatChipsModule,
-    MatProgressSpinnerModule,
-    MatTooltipModule,
-    MatTabsModule,
-    MatDialogModule
+    MatComponentsModule
   ],
   providers: [
 
